@@ -33,8 +33,10 @@ public class ShopService : IInitializable
 
     private async UniTask GetRemoteModels()
     {
+        if(_authService.UserId == 0)
+            return;
 
-        string url = $"https://api.getcrystal.org/api/game/getNftsByUserId?id={_authService.UserId}&contract={_authService.UserContract}";
+        string url = $"https://devapi.getcrystal.org/api/game/getNftsByUserId?id={_authService.UserId}&contract={_authService.UserContract}";
 
         var request = UnityWebRequest.Get(url);
         await request.SendWebRequest();

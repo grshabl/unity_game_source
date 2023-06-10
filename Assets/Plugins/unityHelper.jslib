@@ -1,11 +1,13 @@
 mergeInto(LibraryManager.library, {
 
   GetUserId: function () {
-    return 64;
+      var urlParams = new URLSearchParams(window.location.search);
+      var id = urlParams.get("uid");
+      return id ? id : 0;
   },
 
   GetUserContract: function () {
-    var returnStr = "0xaeae40b2Ea204e3Bc8e84aC2e8b26e2f75ab8391";
+    var returnStr = "0:6cabdc6646df86a378496e8ceb4f33b5a3f4808432bf02c816aff036dbe74110";
 
 
     var bufferSize = lengthBytesUTF8(returnStr) + 1;
