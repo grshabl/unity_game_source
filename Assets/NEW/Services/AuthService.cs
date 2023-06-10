@@ -11,6 +11,17 @@ public class AuthService : IInitializable
 
     public void Initialize()
     {
+        /*
+        * This is sample commit code 
+        */
+
+        //DELETE ME!
+        int a = 10;
+        a+=15;
+
+        Debug.Log($"Test message: a={a}");
+        //DELETE ME!
+
         GetAuthInfo();
     }
 
